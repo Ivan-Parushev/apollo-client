@@ -1,8 +1,8 @@
-import { DocumentNode } from "graphql";
+import { DocumentNode } from 'graphql';
 
-import { ObservableQuery } from "../../core/ObservableQuery";
-import { QueryDataOptions } from "../types/types";
-import { QueryData } from "../data/QueryData";
+import { ObservableQuery } from '../../core/ObservableQuery';
+import { QueryDataOptions } from '../types/types';
+import { QueryData } from '../data/QueryData';
 
 type QueryInfo = {
   seen: boolean;
@@ -12,7 +12,7 @@ type QueryInfo = {
 function makeDefaultQueryInfo(): QueryInfo {
   return {
     seen: false,
-    observable: null,
+    observable: null
   };
 }
 
@@ -49,7 +49,7 @@ export class RenderPromises {
     if (!info.seen) {
       this.queryPromises.set(
         queryInstance.getOptions(),
-        new Promise((resolve) => {
+        new Promise(resolve => {
           resolve(queryInstance.fetchData());
         })
       );
